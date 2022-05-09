@@ -5,7 +5,11 @@ type StoreTheme = "system" | Theme;
 
 const STORAGE_KEY = "theme";
 
-const loadTheme = () => localStorage.getItem(STORAGE_KEY);
+const loadTheme = () => {
+  // for guarding error on ssr about "localStorage is not defined", so fallbacking to dark theme.
+  return typeof window !== "undefined" ? localStorage.getItem(STORAGE_KEY) : "dark";
+};
+
 const saveTheme = (theme: StoreTheme) => localStorage.setItem(STORAGE_KEY, theme);
 
 export const getTheme = (): Theme => {
