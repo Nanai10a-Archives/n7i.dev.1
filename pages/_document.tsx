@@ -3,8 +3,10 @@ import type { FC } from "react";
 
 import { Html, Head, Main, NextScript } from "next/document";
 
+import { getTheme } from "libs/theme";
+
 const Document: FC<DocumentProps> = () => (
-  <Html>
+  <Html className={getTheme()}>
     <Head>
       {/* import fonts */}
       <link
