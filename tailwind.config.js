@@ -58,7 +58,7 @@ module.exports = {
         "inv-on-sfd": "#1a1c19",
       },
       fontFamily: {
-        poi: ["'Poiret One'", "sans-serif"],
+        poi: ["'Poiret One'", "cursive"],
         zen: ["'Zen Kaku Gothic New'", "sans-serif"],
       },
     },
