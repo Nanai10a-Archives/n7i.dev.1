@@ -14,7 +14,7 @@ const Document: FC<DocumentProps> = () => (
         rel="stylesheet"
       />
     </Head>
-    <body>
+    <body className="bg-bgl dark:bg-bgd text-on-bgl dark:text-on-bgd font-zen">
       <Main />
       <NextScript />
     </body>
