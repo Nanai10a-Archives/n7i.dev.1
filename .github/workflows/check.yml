@@ -1,0 +1,42 @@
+name: ci
+
+on: push
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: setup pnpm
+        uses: pnpm/action-setup@v2
+
+      - name: setup node using cache
+        uses: actions/setup-node@v3
+        with:
+          cache: 'pnpm'
+          node-version-file: .node-version
+
+      - name: get pnpm store dir
+        id: pnpm-cache
+        run: |
+          echo "::set-output name=dir::$(pnpm store path)"
+
+      - name: using pnpm store cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.dir }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: install deps
+        run: pnpm install
+
+      - name: lint
+        run: pnpm run lint
+
+      - name: build
+        run: pnpm run build
