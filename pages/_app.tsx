@@ -2,6 +2,8 @@ import type { AppProps } from "next/app";
 import type { NextPage } from "next";
 import type { FC } from "react";
 
+import { ThemeProvider } from "next-themes";
+
 import "styles/globals.css";
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
@@ -13,6 +15,10 @@ type AppPropsWithLayout = AppProps & {
 };
 
 const App: FC<AppPropsWithLayout> = ({ Component, pageProps }) =>
-  (Component.applyLayout ?? ((c) => c))(<Component {...pageProps} />);
+  (Component.applyLayout ?? ((c) => c))(
+    <ThemeProvider attribute="class">
+      <Component {...pageProps} />
+    </ThemeProvider>,
+  );
 
 export default App;
