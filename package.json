@@ -9,7 +9,7 @@
   },
   "author": "Nanai Jua <me@n7i.dev>",
   "license": "MIT",
-  "packageManager": "pnpm@^7.0.1",
+  "packageManager": "pnpm@^7.1.0",
   "dependencies": {
     "next": "<=12.1.5",
     "react": "npm:@preact/compat@^17.0.3",
