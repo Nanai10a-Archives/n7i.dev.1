@@ -12,7 +12,7 @@ const Document: FC<DocumentProps> = () => (
         rel="stylesheet"
       />
     </Head>
-    <body className="bg-bgl dark:bg-bgd text-on-bgl dark:text-on-bgd font-zen">
+    <body className="bg-bgl dark:bg-bgd text-on-bgl dark:text-on-bgd font-zen text-4xl">
       <Main />
       <NextScript />
     </body>
