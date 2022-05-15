@@ -26,6 +26,7 @@ specifiers:
   prettier: ^2.6.2
   react: npm:@preact/compat@^17.0.3
   react-dom: npm:@preact/compat@^17.0.3
+  react-keyboard-hooks: ^1.2.3
   react-ssr-prepass: npm:preact-ssr-prepass@^1.2.0
   tailwindcss: ^3.0.24
   tslib: ^2.4.0
@@ -60,6 +61,7 @@ devDependencies:
   preact-render-to-string: 5.2.0_preact@10.7.2
   preact-ssr-prepass: 1.2.0_preact@10.7.2
   prettier: 2.6.2
+  react-keyboard-hooks: 1.2.3_tp5llvuvk3nymhndaus7enixm4
   react-ssr-prepass: /preact-ssr-prepass/1.2.0_preact@10.7.2
   tailwindcss: 3.0.24
   tslib: 2.4.0
@@ -2291,6 +2293,17 @@ packages:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
     dev: true
 
+  /react-keyboard-hooks/1.2.3_tp5llvuvk3nymhndaus7enixm4:
+    resolution: {integrity: sha512-M+JTjRClrDCWs3WA9LH+liUwgVwY8tryiOhAE7tADQDPOX0TTCg6mTEXSKqwvMaV9xr5fZOHQV+Ww+8HW4riDw==}
+    peerDependencies:
+      react: ^16.8.x || ^17.x
+    dependencies:
+      react: /@preact/compat/17.0.3_preact@10.7.2
+      use-ssr: 1.0.24_tp5llvuvk3nymhndaus7enixm4
+    transitivePeerDependencies:
+      - react-dom
+    dev: true
+
   /readdirp/3.6.0:
     resolution: {integrity: sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==}
     engines: {node: '>=8.10.0'}
@@ -2661,6 +2674,16 @@ packages:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
     dependencies:
       punycode: 2.1.1
+    dev: true
+
+  /use-ssr/1.0.24_tp5llvuvk3nymhndaus7enixm4:
+    resolution: {integrity: sha512-0MFps7ezL57/3o0yl4CvrHLlp9z20n1rQZV/lSRz7if+TUoM6POU1XdOvEjIgjgKeIhTEye1U0khrIYWCTWw4g==}
+    peerDependencies:
+      react: ^16.13.1 || ^17.0.0
+      react-dom: ^16.13.1 || ^17.0.0
+    dependencies:
+      react: /@preact/compat/17.0.3_preact@10.7.2
+      react-dom: /@preact/compat/17.0.3_preact@10.7.2
     dev: true
 
   /util-deprecate/1.0.2:
