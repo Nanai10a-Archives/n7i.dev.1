@@ -6,7 +6,7 @@ import { ThemeProvider } from "next-themes";
 
 import "styles/globals.css";
 
-export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+export type NextPageWithLayout<P = unknown, IP = P> = NextPage<P, IP> & {
   applyLayout?: (page: JSX.Element) => JSX.Element;
 };
 
